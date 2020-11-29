@@ -4,22 +4,20 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
 
     defaultConfig {
-        minSdkVersion 26
-        targetSdkVersion 30
-        versionCode 1
-        versionName app_version
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -32,9 +30,11 @@ android {
 }
 
 dependencies {
+    def global = rootProject.ext
+
     implementation project(':domain')
 
-    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation global.dataDependencies
 
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
