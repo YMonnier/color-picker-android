@@ -1,5 +1,5 @@
 package com.yseemonnier.mycolors.common
 
-interface CommonUseCase {
-    suspend operator fun invoke(foodFilter: FoodFilter = FoodFilter()) =
+interface CommonAsyncUseCase<T, R> {
+    suspend operator fun invoke(input: T): R
 }
