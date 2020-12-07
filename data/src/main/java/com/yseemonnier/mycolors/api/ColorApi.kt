@@ -32,9 +32,9 @@ class ColorApi(baseUrl: String, private val debug: Boolean = true) {
         loggingInterceptor.level = level
 
         return OkHttpClient().newBuilder().apply {
-            readTimeout(HTTP_READ_TIMEOUT.toLong(), TIMEOUT_UNIT)
-            writeTimeout(HTTP_WRITE_TIMEOUT.toLong(), TIMEOUT_UNIT)
-            connectTimeout(HTTP_CONNECT_TIMEOUT.toLong(), TIMEOUT_UNIT)
+            readTimeout(HTTP_READ_TIMEOUT, TIMEOUT_UNIT)
+            writeTimeout(HTTP_WRITE_TIMEOUT, TIMEOUT_UNIT)
+            connectTimeout(HTTP_CONNECT_TIMEOUT, TIMEOUT_UNIT)
 
             addInterceptor(loggingInterceptor)
         }.build()
@@ -42,8 +42,8 @@ class ColorApi(baseUrl: String, private val debug: Boolean = true) {
 
     private companion object {
         private val TIMEOUT_UNIT = TimeUnit.SECONDS
-        private const val HTTP_CONNECT_TIMEOUT = 10
-        private const val HTTP_READ_TIMEOUT = 20
-        private const val HTTP_WRITE_TIMEOUT = 30
+        private const val HTTP_CONNECT_TIMEOUT = 10L
+        private const val HTTP_READ_TIMEOUT = 20L
+        private const val HTTP_WRITE_TIMEOUT = 30L
     }
 }
