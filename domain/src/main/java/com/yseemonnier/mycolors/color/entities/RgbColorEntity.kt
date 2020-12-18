@@ -4,7 +4,7 @@ data class RgbColorEntity(
     val r: ColorRgbComponent,
     val g: ColorRgbComponent,
     val b: ColorRgbComponent,
-) : Color {
+) : ColorEntity {
     override fun toRgb(): RgbColorEntity {
         return this
     }

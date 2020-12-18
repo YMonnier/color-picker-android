@@ -1,4 +1,4 @@
-package com.yseemonnier.mycolors.ui
+package com.yseemonnier.mycolors.common
 
 import androidx.compose.ui.graphics.Color
 

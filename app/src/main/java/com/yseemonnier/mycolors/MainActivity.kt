@@ -2,37 +2,34 @@ package com.yseemonnier.mycolors
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
-import androidx.ui.tooling.preview.Preview
-import com.yseemonnier.mycolors.ui.MyColorsTheme
+import com.yseemonnier.mycolors.palette.ui.PaletteScreen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
-            MyColorsTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
-            }
+            PaletteScreen(
+                colorItems = listOf(
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                )
+            )
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MyColorsTheme {
-        Greeting("Android")
     }
 }
