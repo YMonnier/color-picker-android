@@ -43,7 +43,7 @@ class ColorApi(baseUrl: String, private val debug: Boolean = true) {
     private companion object {
         private val TIMEOUT_UNIT = TimeUnit.SECONDS
         private const val HTTP_CONNECT_TIMEOUT = 10L
-        private const val HTTP_READ_TIMEOUT = 20L
         private const val HTTP_WRITE_TIMEOUT = 30L
+        private const val HTTP_READ_TIMEOUT = 20L
     }
 }
