@@ -58,7 +58,7 @@ fun PaletteScreen(
                     .background(MaterialTheme.colors.background),
             ) {
                 Text(
-                    text = stringResource(id = R.string.palette_add_color),
+                    text = stringResource(R.string.palette_add_color),
                 )
             }
         }

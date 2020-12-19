@@ -4,10 +4,10 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.ui.tooling.preview.Preview
 import com.yseemonnier.mycolors.R
@@ -24,14 +24,14 @@ fun CommonHeader(
         modifier = Modifier.padding(mediumSpace)
     ) {
         Text(
-            text = stringResource(id = titleRes),
+            text = stringResource(titleRes),
             style = typography.h5,
-            color = Color.White,
+            color = MaterialTheme.colors.primary,
         )
         Text(
-            text = stringResource(id = descriptionRes),
+            text = stringResource(descriptionRes),
             style = typography.subtitle1,
-            color = Color.Gray,
+            color = MaterialTheme.colors.secondary,
         )
     }
 }

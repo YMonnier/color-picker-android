@@ -1,5 +1,6 @@
 package com.yseemonnier.mycolors.common
 
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
@@ -8,20 +9,20 @@ import androidx.compose.ui.graphics.Color
 
 private val DarkColorPalette = darkColors(
     primary = Color.White,
-    primaryVariant = Color.White,
-    secondary = Color.White,
+    primaryVariant = Color.Black,
+    secondary = Color.LightGray,
 )
 
 private val LightColorPalette = lightColors(
     primary = Color.Black,
-    primaryVariant = Color.Black,
+    primaryVariant = Color.LightGray,
     secondary = Color.Black,
     background = Color.White,
     surface = Color.White,
 )
 
 @Composable
-fun MyColorsTheme(darkTheme: Boolean = true/*isSystemInDarkTheme()*/, content: @Composable () -> Unit) {
+fun MyColorsTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
