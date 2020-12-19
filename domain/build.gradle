@@ -25,7 +25,8 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = jvm_target
+        freeCompilerArgs += "-Xopt-in=kotlin.RequiresOptIn"
     }
 }
 
@@ -37,3 +38,4 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
 }
+
