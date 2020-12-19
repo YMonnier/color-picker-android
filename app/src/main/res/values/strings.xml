@@ -3,5 +3,5 @@
 
     <string name="palette_title">Make your palette</string>
     <string name="palette_description">Choose the colors that compose your new palette</string>
-    <string name="palette_add_color">Add color</string>
+    <string name="palette_add_color">+ Add color</string>
 </resources>
