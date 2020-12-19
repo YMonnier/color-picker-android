@@ -1,5 +1,5 @@
 package com.yseemonnier.mycolors.color.entities
 
-interface Color {
+interface ColorEntity {
     fun toRgb(): RgbColorEntity
 }

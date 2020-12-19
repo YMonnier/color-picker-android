@@ -2,37 +2,49 @@ package com.yseemonnier.mycolors
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.Text
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.setContent
-import androidx.ui.tooling.preview.Preview
-import com.yseemonnier.mycolors.ui.MyColorsTheme
+import com.yseemonnier.mycolors.common.utils.Clipboard
+import com.yseemonnier.mycolors.palette.ui.PaletteListener
+import com.yseemonnier.mycolors.palette.ui.PaletteScreen
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PaletteListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
-            MyColorsTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
-                }
-            }
+            PaletteScreen(
+                colorItems = listOf(
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                    Color.Black,
+                    Color.Red,
+                    Color.Magenta,
+                    Color.Yellow,
+                    Color.Blue,
+                )
+            , this)
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+    override fun onAddColor() {
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    MyColorsTheme {
-        Greeting("Android")
+    }
+
+    override fun onRemoveColor(index: Int) {
+
+    }
+
+    override fun onCopyColor(color: Color) {
+        Clipboard.setClipboard(this, "Color", color.toArgb().toString())
     }
 }
